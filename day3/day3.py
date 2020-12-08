@@ -22,6 +22,6 @@ def main():
     print(part_2(lines, slopes))
 
 if __name__ == '__main__':
-    main()
+	main()
 
 
