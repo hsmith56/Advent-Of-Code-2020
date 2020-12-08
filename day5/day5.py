@@ -24,10 +24,24 @@ def seat(string):
     column1 = clmns1[0]
     return row1,column1
 
+seats = []
+ids = []
 for line in lines:
     x,y = seat(line)
     product = (x*8+y)
+    ids.append(product)
     if product > p1:
         p1 = product
+    seats.append([x,y])
+
+# seats.sort()
+# ids = []
+# for x,seat in enumerate(seats[1:-1]):
+#     id.append()
+ids.sort()
+for id1 in range(84,900):
+    if id1 not in ids:
+        p2 = id1
+
 
 print(p1,p2)
