@@ -15,17 +15,19 @@ for x in lines:
 	else:
 		result += 1
 
-
+result = 0
 for x in lines:
 	rule = x[0:x.index(':')].strip()
 	pswd = x[x.index(':')+1::].strip()
 	pos1 = rule[0:rule.index('-')].strip()
 	pos2 = rule[rule.index('-')+1:-2].strip()
 	letter = rule[-1]
-	if x[int(pos1)] == letter or x[int(pos2)]== letter and x[int(pos1)] != x[int(pos2)]:
-		result1 += 1
-		print(x[int(pos1)], x[int(pos2)],letter)
-	else:
-		pass
+	#print(pos1,pos2,pswd)
+	if pswd[int(pos1)-1] != pswd[int(pos2)-1]:
+		if pswd[int(pos1)-1] == letter or pswd[int(pos2)-1] == letter:
+			result1 += 1
+			print(pswd[int(pos1)-1], pswd[int(pos2)-1],letter)
+		else:
+			pass
 
 print(result1)
